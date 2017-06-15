@@ -3,6 +3,8 @@ package td.entities.enemy;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
+import org.newdawn.slick.opengl.Texture;
+import td.tile.Tile;
 import td.tile.TileGrid;
 
 import static td.main.Clock.delta;
@@ -17,8 +19,9 @@ public class EnemyBeeticusBruticus extends Enemy {
     private SpriteSheet spriteSheet;
     private Animation animation;
 
-    public EnemyBeeticusBruticus(int tileX, int tileY, TileGrid grid) throws SlickException {
-        super(tileX, tileY, grid);
+        public EnemyBeeticusBruticus(Texture texture, Tile startTile, TileGrid grid, int width, int height, float speed, float health) throws SlickException{
+            super(texture, startTile, grid, width, height, speed, health);
+
 
         this.spriteSheet = new SpriteSheet("res/sprite/enemy/BeeticusBruticus.png", 32, 32);
         this.animation = new Animation(spriteSheet, new int[]{0, 0, 1, 0, 0, 1}, new int[]{200, 200, 200});

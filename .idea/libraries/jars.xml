@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jars">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/production/Insecticide/jars/ibxm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/Insecticide/jars/slick.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/Insecticide/jars/lwjgl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

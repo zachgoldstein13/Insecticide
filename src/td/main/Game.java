@@ -6,7 +6,7 @@ import org.newdawn.slick.opengl.Texture;
 import td.entities.enemy.Enemy;
 import td.entities.Player;
 import td.entities.WaveManager;
-import td.entities.enemy.EnemyBeeWarrior;
+import td.entities.enemy.EnemyBeeticusBruticus;
 import td.entities.enemy.EnemyQueenHornet;
 import td.entities.tower.MageTower;
 import td.entities.tower.TowerPelletTree;
@@ -35,13 +35,13 @@ public class Game {
         this.grid = grid;
         this.enemyTypes = new Enemy[2];
         this.enemyTypes[0] = new EnemyQueenHornet(0, 0, grid);
-        this.enemyTypes[1] = new EnemyBeeWarrior(0, 0, grid);
+        this.enemyTypes[1] = new EnemyBeeticusBruticus(0, 0, grid);
         this.waveManager = new WaveManager(enemyTypes, 5, 3);
 
         this.player = new Player(grid, waveManager);
         this.player.setup();
 
-//        this.menuBackground = quickLoad("");
+        this.menuBackground = quickLoad("background/BackgroundMain");
         setupUI();
     }
 
@@ -73,7 +73,7 @@ public class Game {
     }
 
     public void update() throws SlickException{
-//        drawQuadTex(menuBackground, 1280, 0, TILE_SIZE * 3, 960);
+        drawQuadTex(menuBackground, 1280, 0, TILE_SIZE * 3, 960);
         grid.draw();
         waveManager.update();
         player.update();

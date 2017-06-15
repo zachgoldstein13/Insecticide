@@ -30,7 +30,7 @@ public class Enemy implements Entity {
 
 
     public Enemy(int tileX, int tileY, TileGrid grid){
-        this.texture = quickLoad("sprite/enemy/Beewarrior");
+        this.texture = quickLoad("sprite/enemy/QueenHornet");
         this.healthBackground = quickLoad("sprite/healthBackground");
         this.healthForeground = quickLoad("sprite/healthForeground");
         this.healthBorder = quickLoad("sprite/healthBorder");

@@ -22,7 +22,6 @@ public class EnemyBeeticusBruticus extends Enemy {
 
         this.spriteSheet = new SpriteSheet("res/sprite/enemy/BeeticusBruticus.png", 32, 32);
         this.animation = new Animation(spriteSheet, new int[]{0, 0, 1, 0, 0, 1}, new int[]{200, 200, 200});
-        setTexture("sprite/enemy/BeeticusBruticus");
     }
 
     @Override
@@ -39,7 +38,6 @@ public class EnemyBeeticusBruticus extends Enemy {
     public void draw() {
         float healthPercentage = super.getHealth() / super.getStartHealth();
         animation.draw(super.getX(), super.getY());
-
         drawQuadTex(super.getHealthBackground(), super.getX(), super.getY() - 16, super.getWidth(), 8);
         drawQuadTex(super.getHealthForeground(), super.getX(), super.getY() - 16, TILE_SIZE * healthPercentage, 8);
         drawQuadTex(super.getHealthBorder(), super.getX(), super.getY() - 16, super.getWidth(), 8);

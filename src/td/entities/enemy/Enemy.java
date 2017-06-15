@@ -358,4 +358,40 @@ public class Enemy implements Entity {
     public ArrayList<Checkpoint> getCheckpoints() {
         return checkpoints;
     }
+
+    public float getStartHealth() {
+        return startHealth;
+    }
+
+    public void setStartHealth(float startHealth) {
+        this.startHealth = startHealth;
+    }
+
+    public void setHiddenHealth(float hiddenHealth) {
+        this.hiddenHealth = hiddenHealth;
+    }
+
+    public Texture getHealthBackground() {
+        return healthBackground;
+    }
+
+    public void setHealthBackground(Texture healthBackground) {
+        this.healthBackground = healthBackground;
+    }
+
+    public Texture getHealthForeground() {
+        return healthForeground;
+    }
+
+    public void setHealthForeground(Texture healthForeground) {
+        this.healthForeground = healthForeground;
+    }
+
+    public Texture getHealthBorder() {
+        return healthBorder;
+    }
+
+    public void setHealthBorder(Texture healthBorder) {
+        this.healthBorder = healthBorder;
+    }
 }

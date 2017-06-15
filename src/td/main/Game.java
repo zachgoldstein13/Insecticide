@@ -31,11 +31,11 @@ public class Game {
     private Texture menuBackground;
     private Enemy[] enemyTypes;
 
-    public Game(TileGrid grid) {
+    public Game(TileGrid grid) throws SlickException{
         this.grid = grid;
         this.enemyTypes = new Enemy[2];
-        this.enemyTypes[0] = new EnemyQueenHornet(0, 0, grid);
-        this.enemyTypes[1] = new EnemyBeeticusBruticus(0, 0, grid);
+        this.enemyTypes[1] = new EnemyQueenHornet(0, 0, grid);
+        this.enemyTypes[0] = new EnemyBeeticusBruticus(0, 0, grid);
         this.waveManager = new WaveManager(enemyTypes, 5, 3);
 
         this.player = new Player(grid, waveManager);
@@ -58,7 +58,7 @@ public class Game {
         gameUI.draw();
         gameUI.drawString(820, 400, "Lives: " + Player.Lives);
         gameUI.drawString(820, 500, "Gold: " + Player.Gold);
-        gameUI.drawString(840, 600, "Wave: " + waveManager.getWaveNumber());
+        gameUI.drawString(820, 600, "Wave: " + waveManager.getWaveNumber());
         gameUI.drawString(0, 0, StateManager.framesInLastSecond + "fps");
 
         if (Mouse.next()) {

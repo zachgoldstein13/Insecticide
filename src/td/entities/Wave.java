@@ -4,6 +4,7 @@ import td.entities.enemy.Enemy;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import static td.main.Clock.delta;
 import static td.main.Window.TILE_SIZE;
@@ -16,7 +17,7 @@ public class Wave {
 
     private float timeSinceLastSpawn, spawnTime;
     private Enemy[] enemyTypes;
-    private ArrayList<Enemy> enemies;
+    private CopyOnWriteArrayList<Enemy> enemies;
     private int enemiesPerWave, enemiesSpawned;
     private boolean waveCompleted;
 
@@ -26,7 +27,7 @@ public class Wave {
         this.enemiesPerWave = enemiesPerWave;
         this.timeSinceLastSpawn = 0;
         this.enemiesSpawned = 0;
-        this.enemies = new ArrayList<Enemy>();
+        this.enemies = new CopyOnWriteArrayList<Enemy>();
         this.waveCompleted = false;
 
 
@@ -81,7 +82,7 @@ public class Wave {
         return waveCompleted;
     }
 
-    public ArrayList<Enemy> getEnemies() {
+    public CopyOnWriteArrayList<Enemy> getEnemies() {
         return enemies;
     }
 }

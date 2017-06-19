@@ -13,7 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MageTower extends Tower {
 
-    public MageTower(TowerType type, Tile startTile, ArrayList<Enemy> enemies) {
+    public MageTower(TowerType type, Tile startTile, CopyOnWriteArrayList<Enemy> enemies) {
         super(type, startTile, enemies);
     }
 

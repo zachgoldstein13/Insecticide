@@ -22,7 +22,7 @@ public class IceTower extends Tower {
     private Animation animation;
     public Image img;
 
-    public IceTower(TowerType type, Tile startTile, ArrayList<Enemy> enemies) throws SlickException {
+    public IceTower(TowerType type, Tile startTile, CopyOnWriteArrayList<Enemy> enemies) throws SlickException {
         super(type, startTile, enemies);
 
         this.spritesheet = new SpriteSheet("res/sprite/tower/WaterLilly.png", 32, 32);

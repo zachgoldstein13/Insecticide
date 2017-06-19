@@ -23,12 +23,12 @@ public abstract class Tower implements Entity {
     private int width, height, range, cost;
     public Enemy target;
     private Texture[] textures;
-    private ArrayList<Enemy> enemies;
+    private CopyOnWriteArrayList<Enemy> enemies;
     private boolean targeted;
     public ArrayList<Projectile> projectiles;
     public TowerType type;
 
-    public Tower(TowerType type, Tile startTile, ArrayList<Enemy> enemies) {
+    public Tower(TowerType type, Tile startTile, CopyOnWriteArrayList<Enemy> enemies) {
         this.type = type;
         this.textures = type.textures;
         this.cost = type.cost;
@@ -86,7 +86,7 @@ public abstract class Tower implements Entity {
     //Abstract method for 'shoot', must be overwritten in subclasses
     public abstract void shoot(Enemy target);
 
-    public void updateEnemyList(ArrayList<Enemy> newList) {
+    public void updateEnemyList(CopyOnWriteArrayList<Enemy> newList) {
         enemies = newList;
     }
 

@@ -56,7 +56,6 @@ public class Game {
         towerMenu.quickAdd("CannonShadow", "sprite/tower/cannonBase");
         towerMenu.quickAdd("PelletTree", "sprite/particle/Wolf");
         towerMenu.quickAdd("IceTower", "sprite/particle/IceBolt");
-//        towerMenu.quickImageAdd("IceTower", );
     }
 
     private void updateUI() throws SlickException {

@@ -20,7 +20,6 @@ public class Wave {
     private int enemiesPerWave, enemiesSpawned;
     private boolean waveCompleted;
     private boolean allEnemiesDead;
-    private int count;
 
     public Wave(Enemy[] enemyTypes, float spawnTime, int enemiesPerWave) {
         this.enemyTypes = enemyTypes;
@@ -30,7 +29,6 @@ public class Wave {
         this.enemiesSpawned = 0;
         this.enemies = new CopyOnWriteArrayList<Enemy>();
         this.waveCompleted = false;
-        this.count = 0;
 
 
         spawn();
@@ -52,11 +50,7 @@ public class Wave {
                 e.update();
                 e.draw();
             } else {
-                if (count == 0) {
-                    enemies.remove(e);
-                    count = 1;
-                }
-                count = 0;
+                enemies.remove(e);
             }
         }
         if (allEnemiesDead) {

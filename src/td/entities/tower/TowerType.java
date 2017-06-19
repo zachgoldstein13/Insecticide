@@ -12,7 +12,8 @@ import static td.main.Window.quickLoad;
 public enum TowerType {
 
     PelletTree(ProjectileType.Pellet, 5, 600, 1, 50),
-    Mage(new Texture[]{quickLoad("sprite/tower/cannonBase"), quickLoad("sprite/tower/cannonGun")}, ProjectileType.ShadowBall, 5, 600, 3, 50);
+    Mage(new Texture[]{quickLoad("sprite/tower/cannonBase"), quickLoad("sprite/tower/cannonGun")}, ProjectileType.ShadowBall, 5, 600, 3, 50),
+    IceTower(ProjectileType.Iceball,5,600,3,50);
 
     Texture[] textures;
     ProjectileType projectileType;

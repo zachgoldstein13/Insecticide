@@ -1,5 +1,7 @@
 package td.main;
 
+import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.opengl.Texture;
 
 /**
@@ -11,10 +13,20 @@ public class Button {
     private String name;
     private Texture texture;
     private int x, y, width, height;
+    private Image image;
 
     public Button(String name, Texture texture, int x, int y, int width, int height) {
         this.name = name;
         this.texture = texture;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
+    public Button(String name, Image image, int x, int y) throws SlickException {
+        this.name = name;
+        this.image = image;
         this.x = x;
         this.y = y;
         this.width = width;

@@ -8,6 +8,7 @@ import td.entities.Player;
 import td.entities.WaveManager;
 import td.entities.enemy.EnemyBeeticusBruticus;
 import td.entities.enemy.EnemyQueenHornet;
+import td.entities.tower.IceTower;
 import td.entities.tower.MageTower;
 import td.entities.tower.TowerPelletTree;
 import td.entities.tower.TowerType;
@@ -30,6 +31,7 @@ public class Game {
     private Menu towerMenu;
     private Texture menuBackground;
     private Enemy[] enemyTypes;
+    private IceTower iceTower;
 
     public Game(TileGrid grid) throws SlickException{
         this.grid = grid;
@@ -42,16 +44,19 @@ public class Game {
         this.player.setup();
 
         this.menuBackground = quickLoad("background/BackgroundMain");
+
         setupUI();
     }
 
-    private void setupUI() {
+    private void setupUI() throws SlickException {
         gameUI = new UI();
         gameUI.createMenu("PickTower", WIDTH - TILE_SIZE * 3, HEIGHT / 8, TILE_SIZE * 3, HEIGHT, 2, 0);
 
         towerMenu = gameUI.getMenu("PickTower");
         towerMenu.quickAdd("CannonShadow", "sprite/tower/cannonBase");
         towerMenu.quickAdd("PelletTree", "sprite/particle/Wolf");
+        towerMenu.quickAdd("IceTower", "sprite/particle/IceBolt");
+//        towerMenu.quickImageAdd("IceTower", );
     }
 
     private void updateUI() throws SlickException {
@@ -68,6 +73,8 @@ public class Game {
                     player.pickTower(new MageTower(TowerType.Mage, grid.getTile(0, 0), waveManager.getCurrentWave().getEnemies()));
                 if (towerMenu.isButtonClicked("PelletTree"))
                     player.pickTower(new TowerPelletTree(TowerType.PelletTree, grid.getTile(0, 0), waveManager.getCurrentWave().getEnemies()));
+                if (towerMenu.isButtonClicked("IceTower"))
+                    player.pickTower(new IceTower(TowerType.PelletTree, grid.getTile(0, 0), waveManager.getCurrentWave().getEnemies()));
             }
         }
     }

@@ -10,8 +10,10 @@ import static td.main.Window.quickLoad;
 
 public enum ProjectileType {
 
-    ShadowBall(quickLoad("sprite/particle/Wolf"), 10, 500),
-    Pellet(quickLoad("sprite/particle/pellet"), 6, 800);
+    ShadowBall(quickLoad("sprite/particle/Plantsvengence"), 10, 500),
+    Pellet(quickLoad("sprite/particle/pellet"), 6, 800),
+    Iceball(quickLoad("sprite/particle/IceBolt"), 6, 800);
+
 
     public Texture texture;
     public int damage;

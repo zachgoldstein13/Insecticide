@@ -12,6 +12,7 @@ public class ProjectilePellet extends Projectile {
     }
 
     @Override
+
     public void damage(){
         super.damage();
     }

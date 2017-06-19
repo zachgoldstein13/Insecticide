@@ -14,7 +14,7 @@ public class ProjectileIceBall extends Projectile {
 
     @Override
     public void damage() {
-        super.getTarget().setSpeed(4f);
+        super.getTarget().setSpeed(3f);
         super.damage();
     }
 }

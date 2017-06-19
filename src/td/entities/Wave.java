@@ -2,8 +2,8 @@ package td.entities;
 
 import td.entities.enemy.Enemy;
 
+import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import static td.main.Clock.delta;
 import static td.main.Window.TILE_SIZE;
@@ -16,10 +16,9 @@ public class Wave {
 
     private float timeSinceLastSpawn, spawnTime;
     private Enemy[] enemyTypes;
-    private CopyOnWriteArrayList<Enemy> enemies;
+    private ArrayList<Enemy> enemies;
     private int enemiesPerWave, enemiesSpawned;
     private boolean waveCompleted;
-    private boolean allEnemiesDead;
 
     public Wave(Enemy[] enemyTypes, float spawnTime, int enemiesPerWave) {
         this.enemyTypes = enemyTypes;
@@ -27,7 +26,7 @@ public class Wave {
         this.enemiesPerWave = enemiesPerWave;
         this.timeSinceLastSpawn = 0;
         this.enemiesSpawned = 0;
-        this.enemies = new CopyOnWriteArrayList<Enemy>();
+        this.enemies = new ArrayList<Enemy>();
         this.waveCompleted = false;
 
 
@@ -36,7 +35,8 @@ public class Wave {
 
     public void update() {
         //Assume all enemies are dead, until loop proves otherwise
-        if (enemiesSpawned <= enemiesPerWave) {
+        boolean allEnemiesDead = true;
+        if (enemiesSpawned < enemiesPerWave) {
             timeSinceLastSpawn += delta();
             if (timeSinceLastSpawn > spawnTime) {
                 spawn();
@@ -44,14 +44,16 @@ public class Wave {
             }
         }
 
-        for (Enemy e : enemies) {
-            if (e.isAlive()) {
-                allEnemiesDead = false;
-                e.update();
-                e.draw();
-            } else {
-                enemies.remove(e);
-            }
+//        for (Enemy e : enemies) {
+          for(int i = 0; i < enemies.size(); i++) {
+              Enemy e = enemies.get(i);
+                if (e.isAlive()) {
+                    allEnemiesDead = false;
+                    e.update();
+                    e.draw();
+                } else {
+                    enemies.remove(e);
+                }
         }
         if (allEnemiesDead) {
             waveCompleted = true;
@@ -79,7 +81,7 @@ public class Wave {
         return waveCompleted;
     }
 
-    public CopyOnWriteArrayList<Enemy> getEnemies() {
+    public ArrayList<Enemy> getEnemies() {
         return enemies;
     }
 }

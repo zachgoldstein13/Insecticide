@@ -216,8 +216,8 @@ public class Enemy implements Entity {
         }
     }
 
-    private void die() {
-        this.alive = false;
+    public void die() {
+        alive = false;
     }
 
     public void draw() {

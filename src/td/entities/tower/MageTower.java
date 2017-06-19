@@ -4,6 +4,7 @@ import td.entities.enemy.Enemy;
 import td.entities.projectile.ProjectileShadowBall;
 import td.tile.Tile;
 
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -12,7 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MageTower extends Tower {
 
-    public MageTower(TowerType type, Tile startTile, CopyOnWriteArrayList<Enemy> enemies) {
+    public MageTower(TowerType type, Tile startTile, ArrayList<Enemy> enemies) {
         super(type, startTile, enemies);
     }
 

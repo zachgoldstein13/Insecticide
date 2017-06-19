@@ -7,6 +7,7 @@ import td.entities.enemy.Enemy;
 import td.entities.projectile.ProjectileShadowBall;
 import td.tile.Tile;
 
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import static td.main.Clock.delta;
@@ -19,7 +20,7 @@ public class TowerPelletTree extends Tower {
     private SpriteSheet spritesheet;
     private Animation animation;
 
-    public TowerPelletTree(TowerType type, Tile startTile, CopyOnWriteArrayList<Enemy> enemies) throws SlickException {
+    public TowerPelletTree(TowerType type, Tile startTile, ArrayList<Enemy> enemies) throws SlickException {
         super(type, startTile, enemies);
 
         this.spritesheet = new SpriteSheet("res/sprite/tower/PelletTree.png", 32, 32);

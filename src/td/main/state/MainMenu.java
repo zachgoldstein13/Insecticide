@@ -15,7 +15,7 @@ public class MainMenu {
     private UI menuUI;
 
     public MainMenu() {
-        background = quickLoad("background/Graveyard");
+        background = quickLoad("background/BackgroundMain");
         menuUI = new UI();
         menuUI.addButton("Play", "sprite/play_button", WIDTH / 2 - 128, (int) (HEIGHT * 0.25f));
         menuUI.addButton("Editor", "sprite/Play", WIDTH / 2 - 128, (int) (HEIGHT * 0.45f));
@@ -36,7 +36,9 @@ public class MainMenu {
     }
 
     public void update() {
-        //drawQuadTex(background, 0, 0, 2048, 1024); // TODO: 6/8/17 Get an image for the background of the application 
+        if (background != null) {
+            drawQuadTex(background, 0, 0, 0, 0);
+        }
         drawQuad(0, 0, WIDTH, HEIGHT);
         menuUI.draw();
         updateButtons();

@@ -19,6 +19,8 @@ public class Wave {
     private CopyOnWriteArrayList<Enemy> enemies;
     private int enemiesPerWave, enemiesSpawned;
     private boolean waveCompleted;
+    private boolean allEnemiesDead;
+    private int count;
 
     public Wave(Enemy[] enemyTypes, float spawnTime, int enemiesPerWave) {
         this.enemyTypes = enemyTypes;
@@ -28,15 +30,15 @@ public class Wave {
         this.enemiesSpawned = 0;
         this.enemies = new CopyOnWriteArrayList<Enemy>();
         this.waveCompleted = false;
+        this.count = 0;
 
 
         spawn();
     }
 
     public void update() {
-        boolean allEnemiesDead = true;
         //Assume all enemies are dead, until loop proves otherwise
-        if (enemiesSpawned < enemiesPerWave) {
+        if (enemiesSpawned <= enemiesPerWave) {
             timeSinceLastSpawn += delta();
             if (timeSinceLastSpawn > spawnTime) {
                 spawn();
@@ -50,7 +52,11 @@ public class Wave {
                 e.update();
                 e.draw();
             } else {
-                enemies.remove(e);
+                if (count == 0) {
+                    enemies.remove(e);
+                    count = 1;
+                }
+                count = 0;
             }
         }
         if (allEnemiesDead) {

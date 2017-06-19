@@ -210,14 +210,14 @@ public class Enemy implements Entity {
     //Take damage from external source
     public void damage(int amount) {
         health -= amount;
-        if (health <= 0) {
+        if (health < 0) {
             die();
             Player.modifyGold(5);
         }
     }
 
     private void die() {
-        alive = false;
+        this.alive = false;
     }
 
     public void draw() {

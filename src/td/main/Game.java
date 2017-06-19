@@ -35,7 +35,7 @@ public class Game {
         this.grid = grid;
         this.enemyTypes = new Enemy[2];
         this.enemyTypes[1] = new EnemyQueenHornet(0, 0, grid);
-        this.enemyTypes[0] = new EnemyBeeticusBruticus(quickLoad("sprite/enemy/BeeticusBruticus.png"), grid.getTile(0, 0),grid, TILE_SIZE, TILE_SIZE, 10, 50);
+        this.enemyTypes[0] = new EnemyBeeticusBruticus(quickLoad("sprite/enemy/BeeticusBruticus"), grid.getTile(0, 0),grid, TILE_SIZE, TILE_SIZE, 10, 50);
         this.waveManager = new WaveManager(enemyTypes, 5, 3);
 
         this.player = new Player(grid, waveManager);

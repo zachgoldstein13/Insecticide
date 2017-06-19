@@ -2,9 +2,9 @@ package td.main;
 
 
 import org.lwjgl.input.Mouse;
-import org.newdawn.slick.TrueTypeFont;
+import org.newdawn.slick.*;
 
-import java.awt.*;
+import java.awt.Font;
 import java.util.ArrayList;
 
 import static td.main.Window.*;
@@ -96,6 +96,11 @@ public class UI {
 
         public void quickAdd(String name, String buttonTextureName){
             Button b = new Button(name, quickLoad(buttonTextureName), 0, 0);
+            setButton(b);
+        }
+        public void quickImageAdd(String name, Image image) throws SlickException{
+            Image img = image;
+            Button b = new Button(name, img, 0, 0);
             setButton(b);
         }
 

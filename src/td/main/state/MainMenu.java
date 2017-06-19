@@ -15,7 +15,7 @@ public class MainMenu {
     private UI menuUI;
 
     public MainMenu() {
-        //background = quickLoad("background/Graveyard");
+        background = quickLoad("background/Graveyard");
         menuUI = new UI();
         menuUI.addButton("Play", "sprite/play_button", WIDTH / 2 - 128, (int) (HEIGHT * 0.25f));
         menuUI.addButton("Editor", "sprite/Play", WIDTH / 2 - 128, (int) (HEIGHT * 0.45f));
